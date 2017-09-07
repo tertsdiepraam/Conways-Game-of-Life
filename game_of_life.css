@@ -1,0 +1,9 @@
+aside {
+  float: left;
+}
+
+.aside_div {
+  margin: 5px;
+  padding: 5px;
+  background-color: lightgrey;
+}

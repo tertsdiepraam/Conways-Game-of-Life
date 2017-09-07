@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="game_of_life.js"></script>
+    <link rel="stylesheet" type="text/css" href="game_of_life.css">
+  </head>
+  <body>
+    <aside display="block">
+      <div class="aside_div">
+        <div display="inline">
+          <button id="run_bttn">Start</button>
+          <button id="step_bttn">Step</button>
+          <button id="clear_bttn">Clear</button>
+        </div>
+        <p>Horizontal grid size:</p>
+        <input type="number" min="1" value="20" step="1" id="size_x">
+
+        <p>Vertical grid size:</p>
+        <input type="number" min="1" value="20" step="1" id="size_y">
+
+        <p>Cell size: </p>
+        <input type="number" min="1" value="20" step="1" id="cell_size">
+
+        <p>Speed: </p>
+        <input type="number" min="1" max="100" value="10" id="speed">
+      </div>
+      <div class="aside_div">
+        <button id="randomize_bttn">Randomize board</button>
+        <p>% of alive cells</p>
+        <input type="number" min="1" max="100" value="10" id="randomize_input">
+      </div>
+    </aside>
+    <article style="float: left">
+      <canvas id="cnvs"></canvas>
+    </artile>
+  </body>
+</html>
