@@ -51,8 +51,9 @@ window.onload = function() {
   cnvs.addEventListener("mousedown", (event) => {
     mouse_pos = getMousePos(cnvs, event)
     cell = {
-      x: Math.floor(mouse_pos.x / cell_size),
-      y: Math.floor(mouse_pos.y / cell_size)
+      // +1 for lines between cells
+      x: Math.floor(mouse_pos.x / (cell_size+1)),
+      y: Math.floor(mouse_pos.y / (cell_size+1))
     }
     board[cell.x][cell.y] = !board[cell.x][cell.y]
     draw_board()
@@ -100,17 +101,23 @@ function draw_board() {
      } else {
        ctx.fillStyle = "rgb(50,50,50)"
      }
-     ctx.fillRect(x*cell_size, y*cell_size, cell_size, cell_size)
+     // +x and +y for lines between cells
+     ctx.fillRect(
+       x * cell_size + x,
+       y * cell_size + y,
+       cell_size,
+       cell_size
+     )
    }
  }
 }
 
 function set_size() {
-  height = size_y_input.value
-  width  = size_x_input.value
-  cell_size = cell_size_input.value
-  cnvs.height = height * cell_size
-  cnvs.width  = width * cell_size
+  height = parseInt(size_y_input.value)
+  width  = parseInt(size_x_input.value)
+  cell_size = parseInt(cell_size_input.value)
+  cnvs.height = height * cell_size + height // +height for lines between cells
+  cnvs.width  = width  * cell_size + width // +width for lines between cells
 }
 
 function empty_board() {
@@ -125,7 +132,7 @@ function empty_board() {
 }
 
 function set_speed() {
-  speed = 1000/ speed_input.value
+  speed = 1000/ parseInt(speed_input.value)
 }
 
 // Control functions, called when input is changed and
@@ -164,7 +171,7 @@ function speed_change() {
 }
 
 function randomize() {
-  let ratio = randomize_input.value
+  let ratio = parseInt(randomize_input.value)
   for (var x=0; x<width; x++) {
     for (var y=0; y<height; y++) {
       if (Math.random()*100 < ratio) {
