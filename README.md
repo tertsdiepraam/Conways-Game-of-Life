@@ -6,10 +6,12 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 ## Functionality
  * Clicking cells to change state.
  * Starting, pausing and stepping through the simulation.
- * Adjustable board size.
- * Adjustable cell size.
+ * Adjustable board size, cell size, simulation speed and colors.
  * Randomization
- * Adjustable colors.
 
 ## Usage
 Open the index.html file in any modern browser.
+
+## TODO
+ * Drag and drop shapes
+ * Save and load states
