@@ -31,6 +31,8 @@ window.onload = function() {
   cell_size_input = document.getElementById("cell_size")
   speed_input     = document.getElementById("speed")
   randomize_input = document.getElementById("randomize_input")
+  a_color_input   = document.getElementById("alive_color")
+  d_color_input   = document.getElementById("dead_color")
   run_bttn        = document.getElementById("run_bttn")
   step_bttn       = document.getElementById("step_bttn")
   clear_bttn      = document.getElementById("clear_bttn")
@@ -97,9 +99,9 @@ function draw_board() {
  for (var x=0; x<width; x++) {
    for (var y=0; y<height; y++) {
      if (board[x][y]) {
-       ctx.fillStyle = "rgb(230,230,240)"
+       ctx.fillStyle = a_color_input.value
      } else {
-       ctx.fillStyle = "rgb(50,50,50)"
+       ctx.fillStyle = d_color_input.value
      }
      // +x and +y for lines between cells
      ctx.fillRect(

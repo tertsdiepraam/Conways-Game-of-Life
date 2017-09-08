@@ -2,6 +2,11 @@ aside {
   float: left;
 }
 
+p {
+    margin: 0em;
+    margin-top: 0.5em;
+}
+
 .aside_div {
   margin: 5px;
   padding: 5px;
