@@ -210,16 +210,17 @@ function num_of_neighbours_alive(x, y) {
   // Determine whether neighbours are alive in clockwise direction.
   //  The first condition checks whether there is a neighbour on that side.
   //  The second condition checks the value.
+  const coordinates_in_board = (x,y) => (x >= 0 && x < width && y >= 0 && y < height)
+  const not_both_zero = (n,m) => !(n == 0 && m == 0)
 
   let n = 0
   for (var i=-1; i<=1; i++) {
     for (var j=-1; j<=1; j++) {
-      if (x+i >= 0 && x+i < width && y+j >= 0 && y+j < height) {
-        if (i != 0 || j != 0) {
-          if (board[x+i][y+j]) {
-            n++
-          }
-        }
+      if (coordinates_in_board(x+i,y+j) &&
+          not_both_zero(i,j) &&
+          board[x+i][y+j] == ALIVE)
+      {
+        n++
       }
     }
   }
