@@ -49,6 +49,9 @@ window.onload = function() {
   step_bttn.onclick = step
   clear_bttn.onclick = clear
   randomize_bttn.onclick = randomize
+  a_color_input.onchange = draw_board
+  d_color_input.onchange = draw_board
+
 
   cnvs.addEventListener("mousedown", (event) => {
     mouse_pos = getMousePos(cnvs, event)
