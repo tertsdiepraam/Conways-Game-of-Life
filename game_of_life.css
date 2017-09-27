@@ -1,3 +1,7 @@
+body {
+  background-color: #202020;
+}
+
 aside {
   float: left;
 }
@@ -9,6 +13,7 @@ p {
 
 .aside_div {
   margin: 5px;
+  margin-top: 0px;
   padding: 5px;
   background-color: lightgrey;
 }
